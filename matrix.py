@@ -1,19 +1,43 @@
 import math
 
 def make_translate( x, y, z ):
-    pass
+    matrix = [[1,0,0,0],
+              [0,1,0,0],
+              [0,0,1,0],
+              [x,y,z,1]]
+    return matrix
 
 def make_scale( x, y, z ):
-    pass
+    matrix = [[x,0,0,0],
+              [0,y,0,0],
+              [0,0,z,0],
+              [0,0,0,1]]
+    return matrix
 
 def make_rotX( theta ):    
-    pass
+    r = theta/180.0 * math.pi
+    matrix = [[1,0,0,0],
+              [0,math.cos(r),math.sin(r),0],
+              [0,math.sin(r)*-1,math.cos(r),0],
+              [0,0,0,1]]
+    return matrix
 
 def make_rotY( theta ):
-    pass
+    r = theta/180.0 * math.pi
+    matrix = [[math.cos(r),0,math.sin(r)*-1,0],
+              [0,1,0,0],
+              [math.sin(r),0,math.cos(r),0],
+              [0,0,0,1]]
+    return matrix
 
 def make_rotZ( theta ):
-    pass
+    r = theta/180.0 * math.pi
+    matrix = [[math.cos(r),math.sin(r),0,0],
+              [math.sin(r)*-1,math.cos(r),0,0],
+              [0,0,1,0],
+              [0,0,0,1]]
+    return matrix
+
 
 def print_matrix( matrix ):
     s = ''
